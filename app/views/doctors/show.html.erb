@@ -1,0 +1,18 @@
+<h1><%= @doctor.name %></h1>
+<h2><%= @doctor.department %></h2>
+
+<ul>
+    <% @doctor.appointments.each do |appt| %>
+        <li><%= link_to appt.patient.name, appt.patient%>
+       <%#  binding.pry %>
+        <%= appt.appointment_datetime.strftime("%B %d, %Y at %H:%M") %></li>
+    <% end %>
+</ul>
+
+
+
+<%# https://apidock.com/ruby/DateTime/strftime %>
+
+
+<%# appt.patient(patient_url) %>
+<%# DEPRECATION WARNING: Passing an argument to force an association to reload is now deprecated and will be removed in Rails 5.1. %>
